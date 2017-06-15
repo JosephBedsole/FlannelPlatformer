@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ClipperLib;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
+[RequireComponent(typeof(PolygonCollider2D))]
 public class TileMap : MonoBehaviour {
 
     public Texture2D texture;
@@ -56,6 +58,7 @@ public class TileMap : MonoBehaviour {
         List<Vector2> uvs = new List<Vector2>();
         List<Color> colors = new List<Color>();
         List<int> tris = new List<int>();
+        List<List<IntPoint>> paths = new List<List<IntPoint>>();
         int index = 0;
 
         for (int x = 0; x < width; ++x)
@@ -73,6 +76,13 @@ public class TileMap : MonoBehaviour {
                 pos + new Vector3(1, 1, 0),
                 pos + new Vector3(1, 0, 0)
                 });
+
+                List<IntPoint> points = new List<IntPoint>();
+                points.Add(new IntPoint(x, y));
+                points.Add(new IntPoint(x, y+1));
+                points.Add(new IntPoint(x+1, y+1));
+                points.Add(new IntPoint(x+1, y));
+                paths.Add(points);
 
                 uvs.AddRange(LineUVs(tile));
 
@@ -105,5 +115,37 @@ public class TileMap : MonoBehaviour {
 
         meshFilter.sharedMesh = mesh;
 
+        paths = Clipper.SimplifyPolygons(paths);
+        PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
+        polygon.pathCount = paths.Count;
+        for (int i = 0; i < polygon.pathCount; ++i)
+        {
+            List<IntPoint> path = RemoveColinear(paths[i]);
+            Vector2[] points = new Vector2[path.Count];
+            for(int j = 0; j < points.Length; ++j)
+            {
+                points[j] = new Vector2(path[j].X, path[j].Y);
+            }
+            polygon.SetPath(i, points);
+        }
     }
+
+    List<IntPoint> RemoveColinear (List<IntPoint> path)
+    {
+        List<IntPoint> newPath = new List<IntPoint>(path);
+
+        for (int i = 1; i < path.Count - 1; ++i)
+        {
+            Vector2 a = new Vector2( (path[i].X - path[i - 1].X), (path[i].Y - path[i - 1].Y) );
+            Vector2 b = new Vector2((path[i + 1].X - path[i].X), (path[i + 1].Y - path[i].Y));
+            float dot = Vector2.Dot(a.normalized, b.normalized);
+            if (dot > 0.9f)
+            {
+                newPath.Remove(path[i]);
+            }
+        }
+
+        return newPath;
+    }
+
 }
