@@ -19,6 +19,26 @@ public class TileMap : MonoBehaviour {
 
     [HideInInspector] public int[] tileArray;
 
+    public int columns
+    {
+        get
+        {
+            if (texture == null || tileWidth == 0) return 1;
+            return texture.width / tileWidth;
+        }
+    }
+
+    public int rows
+    {
+        get
+        {
+            if (texture == null || tileHeight == 0) return 1;
+            return texture.height / tileHeight;
+        }
+    }
+
+
+
     public void SetTile(int x, int y, int tile)
     {
         if (tileArray == null || tileArray.Length != (width * height))
@@ -29,7 +49,7 @@ public class TileMap : MonoBehaviour {
         SetupMesh();
     }
     
-    Vector2[] LineUVs (int tile)
+    public Vector2[] GetUVs (int tile)
     { // index = 4;
         int columns = (texture.width / tileWidth);
         int rows = tile / columns;
@@ -84,7 +104,7 @@ public class TileMap : MonoBehaviour {
                 points.Add(new IntPoint(x+1, y));
                 paths.Add(points);
 
-                uvs.AddRange(LineUVs(tile));
+                uvs.AddRange(GetUVs(tile));
 
                 colors.AddRange(new Color[]
                 {
