@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 
     void JumpRoutine()
     {               
-        if (Input.GetKeyDown(KeyCode.Z) && onGround == true)
+        if (Input.GetButtonDown("Jump") && onGround == true)
         {
             Debug.Log("I'm Jumping!");
             body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
