@@ -19,4 +19,11 @@ public class GameManager : MonoBehaviour {
     public Text title;
     public Text pickUpItem;
     public Text pressToUse;
+    public Text gameOver;
+    public Text currency;
+
+    void Update()
+    {
+        currency.text = "Coins: " + Inventory.instance.currency;
+    }
 }

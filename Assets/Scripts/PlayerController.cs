@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
 
     bool onGround = true;
 
+    bool dead = false;
+
     private Rigidbody2D body;
     private Animator anim;
 
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour {
         JumpRoutine();
         Grounded();
         CameraFollow();
+
     }
 
     void JumpRoutine()
@@ -72,10 +75,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D c)
-    {
-        if (c.gameObject.tag == "enemy")
+    { // Enemy Trigger Events
+        if (c.gameObject.tag == "Enemy")
         {
+            GameManager.instance.gameOver.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
+
+        // Object Trigger Events
+        if (c.gameObject.tag == "Coin")
+        {
+            Inventory.instance.CurrencyUp(2);
+        }
+
     }
 }
