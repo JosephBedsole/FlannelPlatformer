@@ -13,5 +13,4 @@ public class CurrencyPickup : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
-
 }
