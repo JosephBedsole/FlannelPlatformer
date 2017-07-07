@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public GameObject blackScreen;
+
     [Header("Text")]
     [Space(10)]
     public Text title;
@@ -25,5 +27,11 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         currency.text = "Coins: " + Inventory.instance.currency;
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+
+        yield return new WaitForEndOfFrame();
     }
 }

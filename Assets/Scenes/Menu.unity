@@ -500,7 +500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The Army of Blades
+  m_Text: The Mountian's Call
 --- !u!222 &732278387
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -938,13 +938,60 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BEARD WARS!
+  m_Text: FLANNEL
 --- !u!222 &1791722621
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791722618}
+--- !u!1001 &1837426000
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114752966931629408, guid: f9324f4195873594c92058af4e51b3c3,
+        type: 2}
+      propertyPath: clips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800578057431510, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f9324f4195873594c92058af4e51b3c3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2091360998
 GameObject:
   m_ObjectHideFlags: 0

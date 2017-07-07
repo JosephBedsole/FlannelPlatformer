@@ -22,6 +22,7 @@ public class SceneTransition : MonoBehaviour {
         if (Input.GetButtonDown(buttonToPress) && (Time.time - startTime) > wait)
         {
             Debug.Log("LoadingTheScene");
+            AudioManager.instance.StartCoroutine("ChangeMusicBack");
             SceneManager.LoadScene(scene);
         }
     }
