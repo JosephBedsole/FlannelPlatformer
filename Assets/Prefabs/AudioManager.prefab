@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551754648407662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.9, y: -29.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,9 +60,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13552635fd7c2ab419f3c789d76d83f3, type: 3}
   - {fileID: 8300000, guid: 62e18129789d15d469e73f938b8c8235, type: 3}
   - {fileID: 8300000, guid: 1d0e6922a4648fb4bb286dbdcc6f213c, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 4c3fd144f6642b844961917dc69ee040, type: 3}
+  - {fileID: 8300000, guid: 613c7a7c1b0ad614fa62c351e8026b6e, type: 3}
+  - {fileID: 8300000, guid: 3dd64c0b12006b04b866104f9092897c, type: 3}
   sfxMixer: {fileID: 243420523234890838, guid: 9bb915e16778dab42898da736e6038af, type: 2}
   sfxSourcesCount: 5

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     bool facingRight = true;
     bool onGround = true;
-
+    bool invincible = false;
     bool dead = false;
 
     private Rigidbody2D body;
@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         health = GetComponent<HealthController>();
         health.onHealthChanged += AnimateHealth;
-        StartCoroutine("WalkSoundRoutine", x);
 
         //AudioManager.CrossfadeMusic(AudioManager.instance.music2, 1);
         AudioManager.instance.StartCoroutine("ChangeMusic2");
@@ -69,12 +68,7 @@ public class PlayerController : MonoBehaviour {
             // anim.SetTrigger("Dying");
             // AudioManager.CrossfadeMusic(AudioManager.instance.music3, 1);
 
-            GameManager.instance.gameOver.gameObject.SetActive(true);
-            AudioManager.instance.StartCoroutine("ChangeMusic3");
-            ParticleSystem dParticle = Instantiate(deathParticle);
-            dParticle.Stop();
-            dParticle.transform.position = transform.position;
-            dParticle.Play();
+            DeathCheck();
             gameObject.SetActive(false);
         }
         else if (health < prevHealth && prevHealth > 0)
@@ -99,13 +93,21 @@ public class PlayerController : MonoBehaviour {
         }        
     }
 
-    IEnumerator WalkSoundRoutine(float x)
+    public void WalkSound()
     {
-        while (x < 0.3 || x > 0.3)
-        {
-            AudioManager.PlayVariedEffect("footsteps");
-            yield return new WaitForSeconds(0.5f);
-        }
+        Debug.Log("Step");
+        AudioManager.PlayVariedEffect("footsteps");
+    }
+
+    void DeathCheck()
+    {
+        GameManager.instance.gameOver.gameObject.SetActive(true);
+        AudioManager.instance.StartCoroutine("ChangeMusic3");
+        ParticleSystem dParticle = Instantiate(deathParticle);
+        dParticle.Stop();
+        dParticle.transform.position = transform.position;
+        dParticle.Play();
+        Debug.Log("Blaaaaaaah");
     }
 
     void CharacterFlip(float x)
@@ -160,8 +162,32 @@ public class PlayerController : MonoBehaviour {
     { // Enemy Trigger Events
         if (c.gameObject.tag == "Enemy")
         {
-            health.TakeDamage(2);
-            AudioManager.PlayEffect("GotHit");
+            if (!invincible)
+            {
+                StartCoroutine("InvincibilityFrames");
+                health.TakeDamage(2);
+                AudioManager.PlayEffect("GotHit");
+            }
+        }
+
+        if (c.gameObject.tag == "Spikes")
+        {
+            if (!invincible)
+            {
+                StartCoroutine("InvincibilityFrames");
+                health.TakeDamage(2);
+                AudioManager.PlayEffect("GotHit");
+            }
+        }
+
+        if (c.gameObject.tag == "EnemyProjectile")
+        {
+            if (!invincible)
+            {
+                StartCoroutine("InvincibilityFrames");
+                health.TakeDamage(2);
+                AudioManager.PlayEffect("GotHit");
+            }
         }
 
         // Object Trigger Events
@@ -170,7 +196,27 @@ public class PlayerController : MonoBehaviour {
             Inventory.instance.CurrencyUp(2);
             AudioManager.PlayEffect("Pick-up Coin");
         }
+        
+        if (c.gameObject.tag == "FinishLine")
+        {
+            GameManager.instance.FinishLine.gameObject.SetActive(true);
+        }
 
+        if (c.gameObject.tag == "FallDeath")
+        {
+            DeathCheck();
+            gameObject.SetActive(false);
+        }
+
+    }
+
+    IEnumerator InvincibilityFrames()
+    {
+        invincible = true;
+        // Blinking animation Play()
+        yield return new WaitForSeconds(1);
+        // Blinking animation Stop()
+        invincible = false;
     }
 
     IEnumerator AttackRoutine()

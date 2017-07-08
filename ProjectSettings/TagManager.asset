@@ -8,6 +8,10 @@ TagManager:
   - Coin
   - Enemy
   - playerWeapon
+  - FinishLine
+  - FallDeath
+  - Spikes
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
