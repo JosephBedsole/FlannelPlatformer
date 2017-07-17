@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="tiles_spritesheet" tilewidth="64" tileheight="64" tilecount="64" columns="8">
- <image source="../Sprites/tiles_spritesheet.png" width="512" height="512"/>
+ <image source="../Art/Sprites/tiles_spritesheet.png" width="512" height="512"/>
  <tile id="0">
   <objectgroup draworder="index">
    <object id="1" x="0" y="0" width="64" height="64"/>

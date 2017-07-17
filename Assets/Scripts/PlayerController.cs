@@ -25,13 +25,14 @@ public class PlayerController : MonoBehaviour {
     private HealthController health;
 
 
-    void Start()
+    IEnumerator Start()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         health = GetComponent<HealthController>();
         health.onHealthChanged += AnimateHealth;
 
+        yield return new WaitForEndOfFrame();
         //AudioManager.CrossfadeMusic(AudioManager.instance.music2, 1);
         AudioManager.instance.StartCoroutine("ChangeMusic2");
     }

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
-        currency.text = "Coins: " + Inventory.instance.currency;
+        currency.text = "x " + Inventory.instance.currency;
     }
 
     IEnumerator GameOverRoutine()
