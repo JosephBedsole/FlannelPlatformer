@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour {
     public ParticleSystem deathParticle;
     public SceneTransition callGameOver;
 
+    [Header("CameraOffsets")]
+    public float cameraX = 0;
+    public float cameraY = 0;
+    public float cameraZ = -10;
+
     bool facingRight = true;
     bool onGround = true;
     bool invincible = false;
@@ -138,7 +143,7 @@ public class PlayerController : MonoBehaviour {
 
     void CameraFollow()
     {
-        Vector3 offsetZ = new Vector3(0, 0, -10);
+        Vector3 offsetZ = new Vector3(cameraX, cameraY, cameraZ);
 
         Vector2 offset = new Vector2 (3, 0);
         Vector2 negativeoffset = new Vector2(-3, 0);
@@ -196,11 +201,6 @@ public class PlayerController : MonoBehaviour {
         {
             Inventory.instance.CurrencyUp(2);
             AudioManager.PlayEffect("Pick-up Coin");
-        }
-        
-        if (c.gameObject.tag == "FinishLine")
-        {
-            GameManager.instance.FinishLine.gameObject.SetActive(true);
         }
 
         if (c.gameObject.tag == "FallDeath")

@@ -12,6 +12,11 @@ TagManager:
   - FallDeath
   - Spikes
   - EnemyProjectile
+  - GreenNPC
+  - SignOne
+  - SignTwo
+  - SignThree
+  - TrollSign
   layers:
   - Default
   - TransparentFX

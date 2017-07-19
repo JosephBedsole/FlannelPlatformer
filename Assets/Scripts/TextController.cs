@@ -11,6 +11,7 @@ public class TextController : MonoBehaviour {
     public Text text;
     public GameObject textBox;
     public GameObject pressAImage;
+    public float textSpeed = 0.1f;
 
     void Awake()
     {
@@ -24,8 +25,6 @@ public class TextController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-
-        text = GetComponent<Text>();
     }
 
     private void OnEnable()
@@ -36,12 +35,12 @@ public class TextController : MonoBehaviour {
     void Start ()
     {
         
-        TextController.ShowText("This is some instant text! ");
-        TextController.TypeText("\nText Box: Hello I Am A Text Box! :D");
-        TextController.WaitForInput();
-        TextController.ClearText();
-        TextController.TypeText("You waited for a couple of seconds. Cool Beans!");
-        TextController.WaitForInput();
+        //TextController.ShowText("This is some instant text! ");
+        //TextController.TypeText("\nText Box: Hello I Am A Text Box! :D");
+        //TextController.WaitForInput();
+        //TextController.ClearText();
+        //TextController.TypeText("You waited for a couple of seconds. Cool Beans!");
+        //TextController.WaitForInput();
     }
 
     IEnumerator ProcessQueue ()
@@ -98,7 +97,7 @@ public class TextController : MonoBehaviour {
         for (int i = 0; i < text.Length; i++)
         {
             this.text.text += text[i];
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 
@@ -132,7 +131,7 @@ public class TextController : MonoBehaviour {
     bool aPressed = false;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A)) aPressed = true;
+        if (Input.GetKeyDown(KeyCode.E)) aPressed = true;
     }
 
 }

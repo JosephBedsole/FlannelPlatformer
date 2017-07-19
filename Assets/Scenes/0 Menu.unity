@@ -1460,9 +1460,9 @@ RectTransform:
   m_Father: {fileID: 517754567}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209, y: 134}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 202, y: -97}
   m_SizeDelta: {x: 553, y: 143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791722620
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2563a6398bc2e4583e4f8d9fbaa9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Credits
+  scene: 0 Credits
   buttonToPress: Fire1
   wait: 1
 --- !u!1 &2131319397
@@ -1960,6 +1960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2563a6398bc2e4583e4f8d9fbaa9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level (1)
+  scene: 1 Forest Level
   buttonToPress: Jump
   wait: 1
