@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour {
     public Text gameOver;
     public Text currency;
 
+    private void Start()
+    {
+        currency.font.material.mainTexture.filterMode = FilterMode.Point;
+    }
+
     void Update()
     {
         currency.text = "x " + Inventory.instance.currency;

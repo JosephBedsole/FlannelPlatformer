@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0755ff893995f39488ff1d056fafb359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 33e07aaf09f74d9469ec9768dcbb175c, type: 3}
-  music2: {fileID: 8300000, guid: aa8d46b2067b46e45b54eff3c23d0adf, type: 3}
-  music3: {fileID: 8300000, guid: 663015b3a79a49c418f9af69739ee0f8, type: 3}
+  music: {fileID: 8300000, guid: 8dad65f2ea92eb0499f9baabb6c59636, type: 3}
+  music2: {fileID: 8300000, guid: 278ecfeb590477c47b684842b5d3df31, type: 3}
+  music3: {fileID: 8300000, guid: 8256e8f3f4c44c843affe4faf50ad508, type: 3}
   musicMixer: {fileID: 243224762204028716, guid: 9bb915e16778dab42898da736e6038af,
     type: 2}
   clips:

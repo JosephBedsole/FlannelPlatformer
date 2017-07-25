@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce = 1;
     public int maxJumpCount = 2;
     public int jumpCount = 2;
+
+    [Header("Functionality")]
     public GameObject playerWeapon;
     public ParticleSystem deathParticle;
     public SceneTransition callGameOver;
@@ -29,7 +31,6 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private HealthController health;
 
-
     IEnumerator Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour {
         health = GetComponent<HealthController>();
         health.onHealthChanged += AnimateHealth;
 
-        yield return new WaitForEndOfFrame();
+    yield return new WaitForEndOfFrame();
         //AudioManager.CrossfadeMusic(AudioManager.instance.music2, 1);
         AudioManager.instance.StartCoroutine("ChangeMusic2");
     }
@@ -59,11 +60,8 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.E))
-        {
-            playerWeapon.transform.position = body.transform.position;
-            anim.SetTrigger("Attack");
+        {           
             StartCoroutine("AttackRoutine");
-            
         }
     }
 
@@ -147,6 +145,10 @@ public class PlayerController : MonoBehaviour {
 
         Vector2 offset = new Vector2 (3, 0);
         Vector2 negativeoffset = new Vector2(-3, 0);
+
+        // Vector3 cool = Camera.main.WorldToScreenPoint(body.transform.position);
+
+        // if (cool > )
         
         Camera.main.transform.position = body.transform.position + offsetZ;
 
@@ -182,6 +184,8 @@ public class PlayerController : MonoBehaviour {
             {
                 StartCoroutine("InvincibilityFrames");
                 health.TakeDamage(2);
+                ScreenShake shake = Camera.main.gameObject.GetComponent<ScreenShake>();
+                shake.Shake();
                 AudioManager.PlayEffect("GotHit");
             }
         }
@@ -222,6 +226,8 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator AttackRoutine()
     {
+        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.1f);
         playerWeapon.gameObject.SetActive(true);
         yield return new WaitForSeconds(.2f);
         playerWeapon.gameObject.SetActive(false);
