@@ -55,10 +55,10 @@ public class SceneAndTextCollider : MonoBehaviour {
 
         if (c.gameObject.tag == "SignOne")
         {
-            TextController.ShowText("Choose Left or Right.");
+            TextController.ShowText("Press 'Space' to Jump");
             TextController.WaitForInput();
             TextController.ClearText();
-            TextController.TypeText("Better choose wisely...");
+            TextController.ShowText("Press 'E' to Attack");
             TextController.WaitForInput();
         }
 
@@ -90,9 +90,39 @@ public class SceneAndTextCollider : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D c)
     {
-        TextController.ClearText();
-    }
 
+        if (c.gameObject.tag == "FinishLine")
+        {
+            TextController.ClearText();
+        }
+
+        if (c.gameObject.tag == "GreenNPC")
+        {
+            TextController.ClearText();
+        }
+
+        // Sign Text
+
+        if (c.gameObject.tag == "SignOne")
+        {
+            TextController.ClearText();
+        }
+
+        if (c.gameObject.tag == "SignTwo")
+        {
+            TextController.ClearText();
+        }
+
+        if (c.gameObject.tag == "SignThree")
+        {
+            TextController.ClearText();
+        }
+
+        if (c.gameObject.tag == "TrollSign")
+        {
+            TextController.ClearText();
+        }
+    }
 }

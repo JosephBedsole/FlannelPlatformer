@@ -99,8 +99,16 @@ public class PlayerController : MonoBehaviour {
 
     public void WalkSound()
     {
-        Debug.Log("Step");
-        AudioManager.PlayVariedEffect("footsteps");
+        if (onGround || jumpCount != 2)
+        {
+            Debug.Log("Step");
+            AudioManager.PlayVariedEffect("footsteps");
+        }
+        else
+        {
+            return;
+        }
+        
     }
 
     void DeathCheck()
@@ -184,8 +192,6 @@ public class PlayerController : MonoBehaviour {
             {
                 StartCoroutine("InvincibilityFrames");
                 health.TakeDamage(2);
-                ScreenShake shake = Camera.main.gameObject.GetComponent<ScreenShake>();
-                shake.Shake();
                 AudioManager.PlayEffect("GotHit");
             }
         }

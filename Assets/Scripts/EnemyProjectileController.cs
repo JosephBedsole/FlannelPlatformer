@@ -6,6 +6,7 @@ public class EnemyProjectileController : MonoBehaviour {
 
     public float waitTime;
     public GameObject bullet;
+    public string projectile;
     public Animator anim;
 
 	
@@ -27,6 +28,7 @@ public class EnemyProjectileController : MonoBehaviour {
             anim.SetTrigger("Shoot");
             yield return new WaitForSeconds(waitTime);
             GameObject thisbullet = Instantiate(bullet);
+            // GameObject thisbullet = Spawner.Spawn(projectile);
             thisbullet.transform.position = transform.position;
             yield return new WaitForSeconds(waitTime);
         }

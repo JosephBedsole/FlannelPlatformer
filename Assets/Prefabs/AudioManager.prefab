@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4800578057431510}
   - component: {fileID: 114752966931629408}
+  - component: {fileID: 114122365830862516}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -40,6 +41,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114122365830862516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551754648407662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c349502af2a5084b80b2e1239b5d506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 1717098854322774, guid: b30595a8890b8b449b13ef1639832cc7, type: 2}
+  - {fileID: 1717098854322774, guid: f1a87373fe05f8d45a995eee6baac2b7, type: 2}
+  - {fileID: 1717098854322774, guid: 6fe655e1dfb1a7941b150b71917c980c, type: 2}
+  - {fileID: 1717098854322774, guid: 9bf4079ee747a8b44a1567cef5edd7af, type: 2}
+  - {fileID: 1158249344872864, guid: dd1d0946924d3664fa1ca47827f37099, type: 2}
 --- !u!114 &114752966931629408
 MonoBehaviour:
   m_ObjectHideFlags: 1

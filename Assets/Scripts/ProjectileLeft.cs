@@ -8,6 +8,8 @@ public class ProjectileLeft : MonoBehaviour {
 
     public Animator anim;
 
+    public ParticleSystem poofParticles;
+
     private Rigidbody2D body;
 
     private void Start()
@@ -22,9 +24,11 @@ public class ProjectileLeft : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ground")
         {
-            // poof animation
+            ParticleSystem pParticle = Instantiate(poofParticles);
+            pParticle.Stop();
+            pParticle.transform.position = transform.position;
+            pParticle.Play();
             gameObject.SetActive(false);
         }
     }
-
 }
