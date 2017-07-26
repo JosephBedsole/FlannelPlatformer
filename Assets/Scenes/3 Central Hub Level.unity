@@ -410,6 +410,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114158002432189556, guid: 546e0d2828facf941b8677decf9f9b5f,
+        type: 2}
+      propertyPath: scene
+      value: 0 Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 114109350731994248, guid: 546e0d2828facf941b8677decf9f9b5f,
+        type: 2}
+      propertyPath: currentScene
+      value: 3 Central Hub Level
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 546e0d2828facf941b8677decf9f9b5f, type: 2}
   m_IsPrefabParent: 0
@@ -427,6 +437,18 @@ MonoBehaviour:
 --- !u!114 &325607643 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114949903939212620, guid: 546e0d2828facf941b8677decf9f9b5f,
+    type: 2}
+  m_PrefabInternal: {fileID: 325607640}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &325607644 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114568907859816848, guid: 546e0d2828facf941b8677decf9f9b5f,
+    type: 2}
+  m_PrefabInternal: {fileID: 325607640}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &325607645 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114050153352818152, guid: 546e0d2828facf941b8677decf9f9b5f,
     type: 2}
   m_PrefabInternal: {fileID: 325607640}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -3741,7 +3763,9 @@ MonoBehaviour:
   pickUpItem: {fileID: 0}
   pressToUse: {fileID: 0}
   FinishLine: {fileID: 0}
-  gameOver: {fileID: 325607643}
+  gameOver: {fileID: 325607645}
+  returnToMenu: {fileID: 325607644}
+  playAgain: {fileID: 325607643}
   currency: {fileID: 325607642}
 --- !u!81 &1760096525
 AudioListener:

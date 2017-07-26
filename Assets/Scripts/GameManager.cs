@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour {
     public Text pressToUse;
     public Text FinishLine;
     public Text gameOver;
+    public Text returnToMenu;
+    public Text playAgain;
     public Text currency;
 
     private void Start()

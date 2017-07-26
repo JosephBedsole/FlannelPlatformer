@@ -17,6 +17,7 @@ TagManager:
   - SignTwo
   - SignThree
   - TrollSign
+  - Chest
   layers:
   - Default
   - TransparentFX

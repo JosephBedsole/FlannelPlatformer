@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 
     yield return new WaitForEndOfFrame();
         //AudioManager.CrossfadeMusic(AudioManager.instance.music2, 1);
-        AudioManager.instance.StartCoroutine("ChangeMusic2");
+        //AudioManager.instance.StartCoroutine("ChangeMusic2");
     }
 
     void Update()
@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour {
     void DeathCheck()
     {
         GameManager.instance.gameOver.gameObject.SetActive(true);
+
         AudioManager.instance.StartCoroutine("ChangeMusic3");
         ParticleSystem dParticle = Instantiate(deathParticle);
         dParticle.Stop();

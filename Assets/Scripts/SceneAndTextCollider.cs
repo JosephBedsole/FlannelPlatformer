@@ -7,12 +7,9 @@ public class SceneAndTextCollider : MonoBehaviour {
 
     public string scene;
 
-    [Header("Dialogue")]
-    public string dialogue1;
-    public string dialogue2;
-    public string dialogue3;
-    public string dialogue4;
-    public string dialogue5;
+    [Header("Animators")]
+
+    public Animator Chest;
 
     bool finished = false;
 
@@ -41,13 +38,26 @@ public class SceneAndTextCollider : MonoBehaviour {
 
         if (c.gameObject.tag == "GreenNPC")
         {
-            TextController.TypeText("Yo... are you just gonna stare or are you gonna buy somthing?");
+            TextController.ShowText("Yo... are you just gonna stare or are you gonna buy somthing?");
             TextController.WaitForInput();
             TextController.ClearText();
-            TextController.TypeText("Are you being paid to sit here and look at me?");
+            TextController.ShowText("Are you being paid to sit here and look at me?");
             TextController.WaitForInput();
             TextController.ClearText();
             TextController.ShowText("Go Away!");
+            TextController.WaitForInput();
+        }
+
+        if (c.gameObject.tag == "Chest")
+        {
+            Chest.SetTrigger("Open");
+            TextController.TypeText("You got...");
+            TextController.WaitForInput();
+            TextController.ClearText();
+            TextController.ShowText("NOTHING!");
+            TextController.WaitForInput();
+            TextController.ClearText();
+            TextController.ShowText("Lul! noob.");
             TextController.WaitForInput();
         }
 
@@ -121,6 +131,11 @@ public class SceneAndTextCollider : MonoBehaviour {
         }
 
         if (c.gameObject.tag == "TrollSign")
+        {
+            TextController.ClearText();
+        }
+
+        if (c.gameObject.tag == "Chest")
         {
             TextController.ClearText();
         }
