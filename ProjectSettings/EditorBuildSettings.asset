@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/00 Credits.unity
+    guid: 91cda003a38e3874eb860074ceb1be45
+  - enabled: 1
     path: Assets/Scenes/0 Menu.unity
     guid: 3490ff1f7820f354fb35a2592afb2021
   - enabled: 0
@@ -13,22 +16,22 @@ EditorBuildSettings:
     guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/1 Forest Level.unity
-    guid: 00000000000000000000000000000000
+    guid: 29ec3db87ba4a4140bad8eaa3670ebbe
   - enabled: 1
     path: Assets/Scenes/2 Island Level.unity
-    guid: 00000000000000000000000000000000
+    guid: e0be044135c29bf4b8c500886fd980cc
   - enabled: 1
     path: Assets/Scenes/3 Central Hub Level.unity
-    guid: 00000000000000000000000000000000
+    guid: 038867834984ef04da9a73f4477a22a8
   - enabled: 1
     path: Assets/Scenes/4 Town Level.unity
-    guid: 00000000000000000000000000000000
+    guid: 551a68cc0a2a55849a6f276ecc9af613
   - enabled: 1
     path: Assets/Scenes/5 Mountain Level.unity
-    guid: 00000000000000000000000000000000
+    guid: 229d9ec5b5b5cb443951a4e385ba233f
   - enabled: 1
     path: Assets/Scenes/6 Castle Level.unity
-    guid: 00000000000000000000000000000000
+    guid: 63f1fe7069dd9614dbc0dd5015b6d8bd
   - enabled: 1
     path: Assets/Scenes/7 Throne Room (Boss).unity
-    guid: 00000000000000000000000000000000
+    guid: d3d5b5d7ffdaad842b9ee718b53865fc

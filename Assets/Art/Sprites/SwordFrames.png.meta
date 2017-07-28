@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3267261cd713fa44d80036574262e5b1
-timeCreated: 1500675299
+timeCreated: 1501129143
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -119,8 +119,8 @@ TextureImporter:
       name: SwordFrames_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 190
+        x: 23
+        y: 191
         width: 80
         height: 80
       alignment: 9
@@ -135,7 +135,7 @@ TextureImporter:
         x: 142
         y: 196
         width: 80
-        height: 76
+        height: 75
       alignment: 9
       pivot: {x: 0.46981773, y: 0.38880277}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       name: SwordFrames_2
       rect:
         serializedVersion: 2
-        x: 273
-        y: 195
+        x: 272
+        y: 197
         width: 80
         height: 75
       alignment: 9
@@ -184,7 +184,7 @@ TextureImporter:
       name: SwordFrames_5
       rect:
         serializedVersion: 2
-        x: 257
+        x: 258
         y: 54
         width: 80
         height: 80

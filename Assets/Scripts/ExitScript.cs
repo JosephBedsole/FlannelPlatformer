@@ -7,9 +7,14 @@ public class ExitScript : MonoBehaviour {
 
 	void Update ()
     {
-		if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Fire2"))
         {
-            Application.Quit();
+            ExitGame();
         }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

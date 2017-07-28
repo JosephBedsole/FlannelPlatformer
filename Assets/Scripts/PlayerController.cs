@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
             
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Fire1"))
         {           
             StartCoroutine("AttackRoutine");
         }
@@ -233,6 +233,7 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator AttackRoutine()
     {
+        Debug.Log("I'm Attakcing");
         anim.SetTrigger("Attack");
         yield return new WaitForSeconds(0.1f);
         playerWeapon.gameObject.SetActive(true);

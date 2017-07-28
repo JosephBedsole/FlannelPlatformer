@@ -25,20 +25,33 @@ public class SceneTransition : MonoBehaviour {
     {
         if (Input.GetButtonDown(buttonToPress) && (Time.time - startTime) > wait)
         {
-            Debug.Log("LoadingTheScene");
-            AudioManager.instance.StartCoroutine("ChangeMusicBack");
-            if (scene == "1 Forest Level")
-            {
-                AudioManager.instance.StartCoroutine("ChangeMusic2");
-            }
-            SceneManager.LoadScene(scene);
+            ChangeScene();
         }
 
         if (Input.GetButtonDown(buttonToMash) && (Time.time - startTime) > wait)
         {
             Debug.Log("LoadingTheScene");
-            AudioManager.instance.StartCoroutine("ChangeMusic2");
-            SceneManager.LoadScene(currentScene);
+            if (scene == "00 Credits")
+            {
+                SceneManager.LoadScene(scene);
+            }
+            else
+            {
+                AudioManager.instance.StartCoroutine("ChangeMusic2");
+                SceneManager.LoadScene(currentScene);
+            }
         }
     }
+
+    public void ChangeScene()
+    {
+        Debug.Log("LoadingTheScene");
+        AudioManager.instance.StartCoroutine("ChangeMusicBack");
+        if (scene == "1 Forest Level")
+        {
+            AudioManager.instance.StartCoroutine("ChangeMusic2");
+        }
+        SceneManager.LoadScene(scene);
+    }
+
 }
